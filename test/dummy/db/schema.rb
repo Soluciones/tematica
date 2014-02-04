@@ -11,6 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20140204094942) do
+
+  create_table "tematica_tematizaciones", :force => true do |t|
+    t.integer  "tematizable_id"
+    t.string   "tematizable_type"
+    t.string   "tematizable_grupo"
+    t.integer  "tematica_id"
+    t.boolean  "explicita"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tematica_tematizaciones", ["tematica_id", "tematizable_type", "tematizable_grupo"], :name => "ix_tematizaciones_by_tematica_and_type_grupo"
+  add_index "tematica_tematizaciones", ["tematizable_type", "tematizable_id"], :name => "ix_tematizaciones_by_tematizable"
 
 end

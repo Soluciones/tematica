@@ -1,5 +1,7 @@
 .DS_Store
 log/**
+test/dummy/log/**
 tmp/**
+test/dummy/tmp/**
 .ruby-gemset
 .ruby-version

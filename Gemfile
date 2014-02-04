@@ -40,6 +40,7 @@ group :test do
   gem 'capybara'
   gem 'simplecov', require: false
   gem 'launchy'
+  gem 'spork'
 end
 
 group :development, :test do

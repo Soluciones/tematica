@@ -3,7 +3,7 @@
 module Tematica
   class Tematica < ActiveRecord::Base
 
-    TEMATICAS = [ 1 => 'Depósitos y cuentas',
+    TEMATICAS = { 1 => 'Depósitos y cuentas',
                   2 => 'Fondos',
                   3 => 'Hipotecas',
                   4 => 'Renta fija',
@@ -14,9 +14,9 @@ module Tematica
                   9 => 'Materias primas',
                  10 => 'Opciones',
                  11 => 'Sistemas de trading',
-                 12 => 'Fiscalidad']
+                 12 => 'Fiscalidad' }
 
-    def nombre(id)
+    def self.nombre(id)
       TEMATICAS[id]
     end
   end

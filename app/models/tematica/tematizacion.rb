@@ -2,8 +2,10 @@
 
 module Tematica
   class Tematizacion < ActiveRecord::Base
+    belongs_to :tematizable, polymorphic: true
+
     def nombre_tematica
-      Tematica.nombre(tematica_id)
+      Tematica::Tematica.nombre(tematica_id)
     end
   end
 end

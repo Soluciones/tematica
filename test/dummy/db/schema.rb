@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140204094942) do
+ActiveRecord::Schema.define(:version => 20140204110954) do
 
   create_table "tematica_tematizaciones", :force => true do |t|
     t.integer  "tematizable_id"
@@ -25,5 +25,11 @@ ActiveRecord::Schema.define(:version => 20140204094942) do
 
   add_index "tematica_tematizaciones", ["tematica_id", "tematizable_type", "tematizable_grupo"], :name => "ix_tematizaciones_by_tematica_and_type_grupo"
   add_index "tematica_tematizaciones", ["tematizable_type", "tematizable_id"], :name => "ix_tematizaciones_by_tematizable"
+
+  create_table "usuarios", :force => true do |t|
+    t.string   "nick"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(:version => 20140213103528) do
 
+  create_table "tematica_tematicas", :force => true do |t|
+    t.string   "nombre"
+    t.string   "seccion_publi"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tematica_tematizaciones", :force => true do |t|
     t.integer  "tematizable_id",                    :null => false
     t.string   "tematizable_type",                  :null => false
@@ -25,13 +32,6 @@ ActiveRecord::Schema.define(:version => 20140213103528) do
 
   add_index "tematica_tematizaciones", ["tematica_id", "tematizable_type", "tematizable_grupo", "tematizable_id"], :name => "ix_tematizaciones_by_tematica_and_type_grupo", :unique => true
   add_index "tematica_tematizaciones", ["tematizable_type", "tematizable_id"], :name => "ix_tematizaciones_by_tematizable"
-
-  create_table "tematicas", :force => true do |t|
-    t.string   "nombre"
-    t.string   "seccion_publi"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "usuarios", :force => true do |t|
     t.string   "nick"

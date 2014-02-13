@@ -2,7 +2,7 @@
 
 class CreateTematicaTematicas < ActiveRecord::Migration
   def self.up
-    create_table :tematicas do |t|
+    create_table :tematica_tematicas do |t|
       t.string :nombre
       t.string :seccion_publi
 
@@ -11,6 +11,6 @@ class CreateTematicaTematicas < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :tematicas
+    drop_table :tematica_tematicas
   end
 end

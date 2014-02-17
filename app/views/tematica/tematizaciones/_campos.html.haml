@@ -1,5 +1,5 @@
 %ul.checkboxes_tematicas.clearfix
   - Tematica::Tematica.todas.each do |tematica|
     %li.item
-      = check_box_tag("tematicas[]", tematica.id, tematizable.busca_tematica(tematica.id, grupo), class: 'checkbox', id: "tematica_#{tematica.id}")
-      = label_tag("tematica_#{tematica.id}", tematica.nombre, class: 'checkbox_label')
+      = check_box_tag("tematicas_#{grupo}[]", tematica.id, tematizable.busca_tematica(tematica.id, grupo), class: 'checkbox', id: "tematica_#{grupo}_#{tematica.id}")
+      = label_tag("tematica_#{grupo}_#{tematica.id}", tematica.nombre, class: 'checkbox_label')

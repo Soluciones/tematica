@@ -10,9 +10,9 @@ module Tematica::TematicaBase
     validates :seccion_publi, presence: true
   end
 
-    def to_param
-      "#{id}-#{ nombre..parameterize }"
-    end
+  def to_param
+    "#{id}-#{ nombre.parameterize }"
+  end
 
   module ClassMethods
     def nombre(id)

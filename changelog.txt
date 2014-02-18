@@ -1,1 +1,2 @@
+[0.0.2] Arregla el deploy, que no funcionaba porque se requería jquery
 [0.0.1] Creado

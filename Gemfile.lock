@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tematica (0.0.1)
+    tematica (0.0.2)
       rails (~> 3.1.12)
 
 GEM
@@ -194,7 +194,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tematica (0.0.2)
+    tematica (0.0.3)
       rails (~> 3.1.12)
 
 GEM

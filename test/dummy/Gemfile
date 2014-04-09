@@ -1,0 +1,17 @@
+source "https://rubygems.org"
+
+gem 'rails', '~> 3.1.12'
+gem 'mysql2'
+gem 'jquery-rails'
+gem 'haml-rails'
+
+group :development do
+  gem 'awesome_print'
+  gem 'mailcatcher' # Set your app to deliver to smtp://127.0.0.1:1025 instead of your default SMTP server, then check out http://127.0.0.1:1080 to see the mail.
+  gem 'debugger'
+  gem 'rspec-rails'
+  gem 'puma'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request' # Necesario para la extensión 'RailsPanel' de Google Chrome
+end

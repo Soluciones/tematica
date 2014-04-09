@@ -4,8 +4,8 @@ require 'spec_helper'
 
 describe Tematica::Tematica do
   context 'validation test' do
-    it { should validate_presence_of(:nombre).with_message(/no puede estar en blanco/) }
-    it { should validate_presence_of(:seccion_publi).with_message(/no puede estar en blanco/) }
+    it { should validate_presence_of(:nombre) }
+    it { should validate_presence_of(:seccion_publi) }
   end
 
   describe "#to_param" do
@@ -20,5 +20,4 @@ describe Tematica::Tematica do
       param.should end_with un_nombre[-1]
     end
   end
-
 end

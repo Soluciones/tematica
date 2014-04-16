@@ -1,6 +1,6 @@
 # Engine Tematica
 
-[![Build Status](https://magnum.travis-ci.com/Soluciones/tematica.svg?token=A3GAeprVqcZuZMWq6WuN&branch=master)](https://magnum.travis-ci.com/Soluciones/tematica)
+[![Build Status](https://travis-ci.org/Soluciones/tematica.svg)](https://travis-ci.org/Soluciones/tematica)
 
 ## Migraciones
 

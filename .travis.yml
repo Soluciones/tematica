@@ -1,4 +1,7 @@
 language: ruby
+cache: bundler
 rvm:
   - "1.9.3"
-script: bundle exec rspec spec
+before_script:
+  - mysql -e 'create database tematica_dummy_test;'
+  - bundle exec rake db:migrate

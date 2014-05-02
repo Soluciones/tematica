@@ -1,5 +1,7 @@
 # Engine Tematica
 
+[![Build Status](https://travis-ci.org/Soluciones/tematica.svg)](https://travis-ci.org/Soluciones/tematica)
+
 ## Migraciones
 
 Una migración no funciona si se lanza en el root del engine:

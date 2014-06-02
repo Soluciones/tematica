@@ -1,3 +1,4 @@
+[1.0.0] Upgraded to Rails 3.2
 [0.0.3] Adding inflection to avoid duplicating over all dependencies
 [0.0.2] Arregla el deploy, que no funcionaba porque se requería jquery
 [0.0.1] Creado

@@ -8,7 +8,6 @@ gem 'haml-rails'
 group :development do
   gem 'awesome_print'
   gem 'mailcatcher' # Set your app to deliver to smtp://127.0.0.1:1025 instead of your default SMTP server, then check out http://127.0.0.1:1080 to see the mail.
-  gem 'debugger'
   gem 'rspec-rails'
   gem 'puma'
   gem 'better_errors'

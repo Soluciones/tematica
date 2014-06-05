@@ -1,6 +1,6 @@
 # coding: UTF-8
 
 module Tematica
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ::ApplicationController
   end
 end

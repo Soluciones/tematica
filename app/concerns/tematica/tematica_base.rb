@@ -6,6 +6,7 @@ module Tematica::TematicaBase
   extend ActiveSupport::Concern
 
   included do
+    has_many :tematizaciones, dependent: :restrict
     validates :nombre, presence: true
     validates :seccion_publi, presence: true
   end

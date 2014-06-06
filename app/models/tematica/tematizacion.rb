@@ -3,6 +3,7 @@
 module Tematica
   class Tematizacion < ActiveRecord::Base
     belongs_to :tematizable, polymorphic: true
+    belongs_to :tematica
 
     validates :tematizable_type, presence: true
     validates :tematizable_id, presence: true

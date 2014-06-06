@@ -6,8 +6,9 @@ module Tematica
     rescue_from ActiveRecord::DeleteRestrictionError, with: :borrar_tematica_con_tematizaciones
 
   private
+
     def borrar_tematica_con_tematizaciones
-      render text: "No se pueden borrar temáticas que tengan tematizaciones asociadas"
+      render text: 'No se pueden borrar temáticas que tengan tematizaciones asociadas'
     end
   end
 end

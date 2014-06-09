@@ -1,0 +1,12 @@
+.flota_der= link_to 'Nueva temática', new_tematica_path
+
+%h1 Temáticas
+
+%table.ranking
+  = ths %w(nombre url-portada sección-publi -)
+  - collection.each do |tematica|
+    %tr
+      %td= link_to tematica.nombre, tematica_path(tematica)
+      %td= link_to tematica.portada_path, tematica.portada_path
+      %td= tematica.seccion_publi
+      %td= render 'links_control', tematica: tematica

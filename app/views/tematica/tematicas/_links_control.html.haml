@@ -1,0 +1,3 @@
+.links_separados
+  = link_to 'Editar', edit_tematica_path(tematica)
+  = link_to 'Borrar', tematica_path(tematica), method: :delete, confirm: "¿Borrar temática #{ tematica.nombre }?"

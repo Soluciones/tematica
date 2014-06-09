@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213123349) do
+ActiveRecord::Schema.define(:version => 20140609095223) do
 
   create_table "tematica_tematicas", :force => true do |t|
     t.string   "nombre"
     t.string   "portada_path"
     t.string   "seccion_publi"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "publicado",     :default => true
   end
 
   create_table "tematica_tematizaciones", :force => true do |t|

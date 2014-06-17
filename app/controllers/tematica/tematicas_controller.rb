@@ -15,6 +15,10 @@ module Tematica
 
   private
 
+    def collection
+      @tematicas ||= end_of_association_chain.order('publicado DESC, nombre')
+    end
+
     def borrar_tematica_con_tematizaciones
       render text: 'No se pueden borrar temáticas que tengan tematizaciones asociadas'
     end

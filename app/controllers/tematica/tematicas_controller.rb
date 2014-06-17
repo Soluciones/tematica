@@ -6,21 +6,23 @@ module Tematica
     rescue_from ActiveRecord::DeleteRestrictionError, with: :borrar_tematica_con_tematizaciones
 
     def destroy
-      tematica = Tematica.find(params[:id])
-      tematica.update_attribute(:publicado, false)
-      redirect_to tematica
+      cambia_publicado(params[:id], false)
     end
 
     def recuperar
-      tematica = Tematica.find(params[:id])
-      tematica.update_attribute(:publicado, true)
-      redirect_to tematica
+      cambia_publicado(params[:id], true)
     end
 
   private
 
     def borrar_tematica_con_tematizaciones
       render text: 'No se pueden borrar temáticas que tengan tematizaciones asociadas'
+    end
+
+    def cambia_publicado(id, publicado)
+      tematica = Tematica.find(id)
+      tematica.update_attribute(:publicado, publicado)
+      redirect_to tematica
     end
   end
 end

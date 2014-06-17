@@ -11,6 +11,12 @@ module Tematica
       redirect_to tematica
     end
 
+    def recuperar
+      tematica = Tematica.find(params[:id])
+      tematica.update_attribute(:publicado, true)
+      redirect_to tematica
+    end
+
   private
 
     def borrar_tematica_con_tematizaciones

@@ -3,7 +3,11 @@
 %h1 Temáticas
 
 %table.ranking
-  = ths %w(nombre url-portada sección-publi -)
+  %tr
+    %th Nombre
+    %th URL portada
+    %th Sección publi
+    %th
   - collection.each do |tematica|
     %tr
       %td= link_to tematica.nombre, tematica_path(tematica)

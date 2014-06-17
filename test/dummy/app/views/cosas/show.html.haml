@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @cosa.nombre
+%p
+  %b Permalink:
+  = @cosa.permalink
+
+= link_to 'Edit', edit_cosa_path(@cosa)
+\|
+= link_to 'Back', cosas_path

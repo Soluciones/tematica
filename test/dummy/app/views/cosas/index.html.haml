@@ -1,0 +1,21 @@
+%h1 Listing cosas
+
+%table
+  %tr
+    %th Nombre
+    %th Permalink
+    %th
+    %th
+    %th
+
+  - @cosas.each do |cosa|
+    %tr
+      %td= cosa.nombre
+      %td= cosa.permalink
+      %td= link_to 'Show', cosa
+      %td= link_to 'Edit', edit_cosa_path(cosa)
+      %td= link_to 'Destroy', cosa, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Cosa', new_cosa_path

@@ -5,6 +5,12 @@ module Tematica
     before_filter :gestor_usr_required
     rescue_from ActiveRecord::DeleteRestrictionError, with: :borrar_tematica_con_tematizaciones
 
+    def destroy
+      tematica = Tematica.find(params[:id])
+      tematica.update_attribute(:publicado, false)
+      redirect_to tematica
+    end
+
   private
 
     def borrar_tematica_con_tematizaciones

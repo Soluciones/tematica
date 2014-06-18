@@ -3,7 +3,7 @@
 
   = f.input :tematizable_id, as: :hidden
   = f.input :tematizable_type, as: :hidden
-  = f.input :tematica_id, input_html: { autofocus: true }
+  = f.input :tematica_id, input_html: { autofocus: true }, as: :select, collection: desplegable_tematicas
 
   = f.button :submit, { class: 'form_button boton_azul' }
 

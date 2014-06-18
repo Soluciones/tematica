@@ -1,0 +1,9 @@
+= simple_form_for resource, html: { class: 'pure-form-aligned' }, defaults: { wrapper_html: { class: 'pure-control-group' }, hint_html: { class: 'pure-form-message-inline' }, label_html: { class: 'pure-inner-control-group-label width_170px' } } do |f|
+  = render 'web/muestra_errores_form', variable: resource
+
+  = f.input :nombre, input_html: { autofocus: true }
+  = f.input :portada_path
+  = f.input :seccion_publi
+  = f.input :publicado
+
+  = f.button :submit, { class: 'form_button boton_azul' }

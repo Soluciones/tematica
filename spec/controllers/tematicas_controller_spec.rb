@@ -3,9 +3,9 @@
 require 'spec_helper'
 
 describe Tematica::TematicasController, type: :controller do
-  describe 'destroy' do
+  describe '#destroy' do
     context 'para una temática publicada' do
-      let!(:tematica) { FactoryGirl.create(:tematica, nombre: 'chorradas', publicado: true) }
+      let(:tematica) { FactoryGirl.create(:tematica, nombre: 'chorradas', publicado: true) }
 
       it 'un destroy debe hacer un borrado lógico' do
         delete :destroy, id: "#{ tematica.id }-chorradas", use_route: :tematicas

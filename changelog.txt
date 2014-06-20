@@ -1,3 +1,7 @@
+[1.1.0] Added Tematica's CRUD
+        Added "publicado" to tematica, thus allowing logical deletion, which has been implemented
+        Added scopes "publicado" & "datos_desplegable" to tematica_base
+        Fixed "better_errors"
 [1.0.0] Upgraded to Rails 3.2
 [0.0.3] Adding inflection to avoid duplicating over all dependencies
 [0.0.2] Arregla el deploy, que no funcionaba porque se requería jquery

@@ -9,6 +9,8 @@ module Tematica::TematicaBase
     has_many :tematizaciones, dependent: :restrict
     validates :nombre, presence: true
     validates :seccion_publi, presence: true
+    scope :publicado, -> { where(publicado: true) }
+    scope :datos_desplegable, -> { publicado.select('id, nombre').order('nombre') }
   end
 
   def to_param

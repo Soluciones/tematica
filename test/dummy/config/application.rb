@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require
 require "tematica"
+require "haml"
 
 module Dummy
   class Application < Rails::Application

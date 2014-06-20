@@ -3,7 +3,7 @@
 module Tematica
   class Tematizacion < ActiveRecord::Base
     attr_accessible :tematizable_type, :tematizable_id, :tematizable_grupo, :tematica_id
-    
+
     belongs_to :tematizable, polymorphic: true
     belongs_to :tematica
 

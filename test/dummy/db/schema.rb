@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213123349) do
+ActiveRecord::Schema.define(:version => 20140609095223) do
 
   create_table "tematica_tematicas", :force => true do |t|
     t.string   "nombre"
     t.string   "portada_path"
     t.string   "seccion_publi"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "publicado",     :default => true
   end
 
   create_table "tematica_tematizaciones", :force => true do |t|
@@ -27,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20140213123349) do
     t.string   "tematizable_grupo", :default => "", :null => false
     t.integer  "tematica_id",                       :null => false
     t.boolean  "explicita"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   add_index "tematica_tematizaciones", ["tematica_id", "tematizable_type", "tematizable_grupo", "tematizable_id"], :name => "ix_tematizaciones_by_tematica_and_type_grupo", :unique => true
@@ -36,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20140213123349) do
 
   create_table "usuarios", :force => true do |t|
     t.string   "nick"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

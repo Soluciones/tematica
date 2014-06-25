@@ -16,8 +16,8 @@ describe Tematica::Tematica do
 
       param = una_tematica.to_param
 
-      param.should start_with un_id.to_s
-      param.should end_with un_nombre[-1]
+      expect(param).to start_with un_id.to_s
+      expect(param).to end_with un_nombre[-1]
     end
   end
 end

@@ -19,6 +19,9 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'rails', '~> 3.2.18'
+  s.add_dependency 'inherited_resources'
+  s.add_dependency 'haml'
+  s.add_dependency 'simple_form'
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'

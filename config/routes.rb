@@ -1,3 +1,5 @@
 Tematica::Engine.routes.draw do
-  resources :tematicas
+  resources :tematicas do
+    post :recuperar, on: :member
+  end
 end

@@ -3,6 +3,14 @@ LineLength:
   Max: 120
   Exclude:
     - app/views/**/*
+    - db/seeds.rb
+    - db/seeds/*
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+
+HashSyntax:
+  EnforcedStyle: hash_rockets
 
 SignalException:
   EnforcedStyle: only_raise

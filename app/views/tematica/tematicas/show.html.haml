@@ -1,0 +1,9 @@
+.flota_der= render 'links_control', tematica: resource
+
+%h1= resource.nombre
+
+- unless resource.publicado?
+  %p
+    %strong NO PUBLICADO
+
+%p Tematizaciones asociadas: #{ resource.tematizaciones.count }

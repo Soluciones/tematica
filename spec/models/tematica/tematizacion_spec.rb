@@ -5,7 +5,7 @@ require 'spec_helper'
 module Tematica
   describe Tematizacion do
     it '#nombre_tematica' do
-      Tematica::Tematica.should_receive(:nombre)
+      expect(Tematica::Tematica).to receive(:nombre)
       FactoryGirl.build(:tematizacion).nombre_tematica
     end
   end

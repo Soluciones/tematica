@@ -4,7 +4,7 @@ module Tematica::TematicaBase
   extend ActiveSupport::Concern
 
   included do
-    has_many :tematizaciones, dependent: :restrict
+    has_many :tematizaciones, dependent: :restrict_with_exception
     validates :nombre, presence: true
     validates :seccion_publi, presence: true
     scope :publicado, -> { where(publicado: true) }

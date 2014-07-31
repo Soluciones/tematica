@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: tematica_dummy_test
+  username: postgres

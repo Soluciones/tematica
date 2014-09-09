@@ -1,3 +1,5 @@
+[2.0.0] Migrated to PostgreSQL
+        Improved HoundCI
 [1.1.0] Added Tematica's CRUD
         Added "publicado" to tematica, thus allowing logical deletion, which has been implemented
         Added scopes "publicado" & "datos_desplegable" to tematica_base

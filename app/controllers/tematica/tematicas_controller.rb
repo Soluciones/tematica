@@ -27,8 +27,8 @@ module Tematica
       redirect_to tematica
     end
 
-    def params_tematica
-      params.require(:tematica).permit(:nombre, :portada_path, :seccion_publi, :publicado)
+    def permitted_params
+      params.permit(tematica: [:nombre, :portada_path, :seccion_publi, :publicado])
     end
   end
 end

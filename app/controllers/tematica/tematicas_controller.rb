@@ -1,5 +1,3 @@
-# coding: UTF-8
-
 module Tematica
   class TematicasController < InheritedResources::Base
     before_filter :gestor_usr_required
@@ -13,7 +11,7 @@ module Tematica
       cambia_publicado(params[:id], true)
     end
 
-  private
+    private
 
     def collection
       @tematicas ||= end_of_association_chain.order('publicado DESC, nombre')
@@ -27,6 +25,10 @@ module Tematica
       tematica = Tematica.find(id)
       tematica.update_attribute(:publicado, publicado)
       redirect_to tematica
+    end
+
+    def params_tematica
+      params.require(:tematica).permit(:nombre, :portada_path, :seccion_publi, :publicado)
     end
   end
 end

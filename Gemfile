@@ -11,9 +11,10 @@ gemspec
 # your gem to rubygems.org.
 gem 'inherited_resources'
 
+gem 'jquery-rails'
+
 group :test do
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
   gem 'capybara'
   gem 'rspec-rails', '~> 3.0'
   gem 'pry'

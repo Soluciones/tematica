@@ -4,8 +4,8 @@ require 'spec_helper'
 
 describe Tematica::Tematica do
   context 'validation test' do
-    it { should validate_presence_of(:nombre) }
-    it { should validate_presence_of(:seccion_publi) }
+    it { is_expected.to validate_presence_of(:nombre) }
+    it { is_expected.to validate_presence_of(:seccion_publi) }
   end
 
   describe "#to_param" do

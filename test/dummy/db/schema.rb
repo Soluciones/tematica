@@ -9,36 +9,39 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140609095223) do
+ActiveRecord::Schema.define(version: 20140609095223) do
 
-  create_table "tematica_tematicas", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  # enable_extension "plpgsql"
+
+  create_table "tematica_tematicas", force: true do |t|
     t.string   "nombre"
-    t.string   "portada_path"
     t.string   "seccion_publi"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.boolean  "publicado",     :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "portada_path"
+    t.boolean  "publicado",     default: true
   end
 
-  create_table "tematica_tematizaciones", :force => true do |t|
-    t.integer  "tematizable_id",                    :null => false
-    t.string   "tematizable_type",                  :null => false
-    t.string   "tematizable_grupo", :default => "", :null => false
-    t.integer  "tematica_id",                       :null => false
+  create_table "tematica_tematizaciones", force: true do |t|
+    t.integer  "tematizable_id",                 null: false
+    t.string   "tematizable_type",               null: false
+    t.string   "tematizable_grupo", default: "", null: false
+    t.integer  "tematica_id",                    null: false
     t.boolean  "explicita"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "tematica_tematizaciones", ["tematica_id", "tematizable_type", "tematizable_grupo", "tematizable_id"], :name => "ix_tematizaciones_by_tematica_and_type_grupo", :unique => true
-  add_index "tematica_tematizaciones", ["tematizable_type", "tematizable_id"], :name => "ix_tematizaciones_by_tematizable"
+  add_index "tematica_tematizaciones", ["tematica_id", "tematizable_type", "tematizable_grupo", "tematizable_id"], name: "ix_tematizaciones_by_tematica_and_type_grupo", unique: true, using: :btree
+  add_index "tematica_tematizaciones", ["tematizable_type", "tematizable_id"], name: "ix_tematizaciones_by_tematizable", using: :btree
 
-  create_table "usuarios", :force => true do |t|
+  create_table "usuarios", force: true do |t|
     t.string   "nick"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

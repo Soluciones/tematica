@@ -10,3 +10,12 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 gem 'inherited_resources'
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'pry'
+  gem 'binding_of_caller'
+end

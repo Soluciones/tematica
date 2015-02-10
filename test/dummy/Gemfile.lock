@@ -81,7 +81,7 @@ GEM
       railties
     mime-types (1.25.1)
     multi_json (1.10.1)
-    mysql2 (0.3.15)
+    pg (0.18.1)
     polyglot (0.3.5)
     puma (2.8.1)
       rack (>= 1.1, < 2.0)
@@ -167,8 +167,8 @@ DEPENDENCIES
   jquery-rails
   mailcatcher
   meta_request
-  mysql2
+  pg
   puma
-  rails (~> 3.2.18)
+  rails
   rspec-rails
   simple_form

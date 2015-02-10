@@ -7,3 +7,4 @@ test/dummy/tmp/**
 .ruby-version
 coverage/**
 Gemfile.lock
+test/dummy/config/database.yml

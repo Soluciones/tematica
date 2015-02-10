@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 gem 'rails', branch: '4-1-stable'   # Si se cambia -> bundle update rails
 gem 'pg'
-gem 'jquery-rails'
 gem 'haml-rails'
 gem 'inherited_resources'
 gem 'simple_form'

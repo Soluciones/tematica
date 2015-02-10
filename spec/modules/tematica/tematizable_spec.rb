@@ -1,6 +1,4 @@
-# coding: UTF-8
-
-require 'spec_helper'
+require 'rails_helper'
 
 describe Tematica::Tematizable do
 end

@@ -58,5 +58,4 @@ RSpec.configure do |config|
     # timeouts and calling it always causes no problem
     DatabaseCleaner.clean
   end
-
 end

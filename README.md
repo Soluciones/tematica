@@ -1,6 +1,8 @@
 # Engine Tematica
 
 [![Build Status](https://travis-ci.org/Soluciones/tematica.svg)](https://travis-ci.org/Soluciones/tematica)
+[![Code Climate](https://codeclimate.com/github/Soluciones/tematica.png)](https://codeclimate.com/github/Soluciones/tematica)
+
 
 ## Migraciones
 

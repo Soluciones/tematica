@@ -1,5 +1,3 @@
-# coding: UTF-8
-
 module Tematica::TematicaBase
   extend ActiveSupport::Concern
 
@@ -8,24 +6,33 @@ module Tematica::TematicaBase
     validates :nombre, presence: true
     validates :seccion_publi, presence: true
     scope :publicado, -> { where(publicado: true) }
-    scope :datos_desplegable, -> { publicado.select('id, nombre').order('nombre') }
-  end
+    scope :datos_desplegable, -> { publicado.select(:id, :nombre).order(:nombre) }
 
-  def to_param
-    "#{id}-#{ nombre.parameterize }"
+    after_update :limpia_cache
   end
 
   module ClassMethods
     def nombre(id)
-      Rails.cache.fetch("tematica-nombre-#{id}") do
+      Rails.cache.fetch("tematica-nombre-#{ id }") do
         Tematica::Tematica.find(id).nombre
       end
     end
 
     def todas
       Rails.cache.fetch("tematicas") do
-        Tematica::Tematica.all
+        Tematica::Tematica.publicado.to_a
       end
     end
+  end
+
+  def to_param
+    "#{ id }-#{ nombre.parameterize }"
+  end
+
+  private
+
+  def limpia_cache
+    Rails.cache.delete('tematicas')
+    Rails.cache.delete("tematica-nombre-#{ id }")
   end
 end

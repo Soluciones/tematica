@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :tematica, class: Tematica::Tematica do
-    nombre        { Faker::Lorem.word }
-    seccion_publi { Faker::Lorem.word }
+    nombre        { FFaker::Lorem.word }
+    seccion_publi { FFaker::Lorem.word }
   end
 end

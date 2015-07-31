@@ -10,8 +10,12 @@ module Tematica::Tematizable
   end
 
   def fijar_tematicas!(ids_tematicas, grupo = '')
-    tematizaciones.where(tematizable_grupo: grupo).where("tematica_id NOT IN (?)", ids_tematicas).delete_all
+    mis_tematizaciones.where(tematizable_grupo: grupo).where.not(tematica_id: ids_tematicas).delete_all
     (ids_tematicas || []).each{ |tematica_id| asignar_tematica!(tematica_id, grupo) }
+  end
+  
+  def mis_tematizaciones
+    Tematica::Tematizacion.where(tematizable: self)
   end
 
   def asignar_tematica!(tematica_id, grupo = '')

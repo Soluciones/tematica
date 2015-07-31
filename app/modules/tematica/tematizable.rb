@@ -9,9 +9,9 @@ module Tematica::Tematizable
     has_many :tematizaciones, as: :tematizable , class_name: 'Tematica::Tematizacion'
   end
 
-  def fijar_tematicas!(tematicas, grupo = '')
-    tematizaciones.where(tematizable_grupo: grupo).where("tematica_id NOT IN (?)", tematicas).delete_all
-    (tematicas || []).each{ |tematica_id| asignar_tematica!(tematica_id, grupo) }
+  def fijar_tematicas!(ids_tematicas, grupo = '')
+    tematizaciones.where(tematizable_grupo: grupo).where("tematica_id NOT IN (?)", ids_tematicas).delete_all
+    (ids_tematicas || []).each{ |tematica_id| asignar_tematica!(tematica_id, grupo) }
   end
 
   def asignar_tematica!(tematica_id, grupo = '')

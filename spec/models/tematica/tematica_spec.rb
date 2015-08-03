@@ -9,7 +9,7 @@ describe Tematica::Tematica do
   describe "#to_param" do
     it "debe generar el parametro empezando por su id" do
       un_id = SecureRandom.random_number(100)
-      un_nombre = Faker::Lorem.words(3).join
+      un_nombre = FFaker::Lorem.words(3).join
       una_tematica = FactoryGirl.build(:tematica, id: un_id, nombre: un_nombre)
 
       param = una_tematica.to_param
